@@ -3,7 +3,7 @@ let matrice = []
 
 WIN_SIZE = 600;
 SIZE = 600;
-NOISE_STEP = 0.02;
+NOISE_STEP = 0.009;
 
 colors = [
   {"color":"#052F66","name":"abyss"},               // abyss
@@ -77,7 +77,7 @@ function fillMatrice(){
     xoff = 0
     matrice[x] = []
     for(let y=0;y<SIZE;y++){
-      let colorValue = Math.round(map(noise(xoff,yoff), 0, 1, 0, 15));
+      let colorValue = Math.round(map(noise(xoff, yoff), 0.2, 0.8, 0, 15));  // Ajustez les seuils selon vos besoins
       if(colorValue < 0){ colorValue = 0; }
       if(colorValue > 15){ colorValue = 15; }
 
